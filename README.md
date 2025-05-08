@@ -1,7 +1,8 @@
 📝 Exploring TypeScript: Powerful Features for Scalable Development
 TypeScript has become a cornerstone in modern JavaScript development, providing static typing, better tooling, and overall improved maintainability. In this post, we’ll explore two important TypeScript features: keyof keyword and the differences between any, unknown, and never.
 
-🔑 Understanding the keyof Keyword in TypeScript
+🔑 What is the use of the keyof keyword in TypeScript? Provide an example.
+
 The keyof keyword is a TypeScript type operator that creates a union of all property names (keys) of a given object type.
 
 ✅ Why use keyof?
@@ -35,7 +36,8 @@ Here, keyof User is "name" | "age" | "isAdmin", and getProperty ensures only val
 -> Boosts IntelliSense suggestions in IDEs
 
 
-🧠 Difference Between any, unknown, and never in TypeScript
+🧠 Explain the difference between any, unknown, and never types in TypeScript.
+
 1. any – Turn Off Type Safety
 When a variable is declared as any, TypeScript will not check its type at all. It effectively disables all type-checking for that variable.
 
