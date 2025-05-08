@@ -6,23 +6,23 @@ TypeScript has become a cornerstone in modern JavaScript development, providing 
 The keyof keyword is a TypeScript type operator that creates a union of all property names (keys) of a given object type.
 
 ✅ Why use keyof?
-It ensures better type safety when accessing object properties, especially in generic functions or utilities.
+It ensures better type safety when accessing object properties, especially in generic functions or utilities. 
 
 🔍 Example:
 type User = {
-  name: string;
-  age: number;
-  isAdmin: boolean;
+name: string;
+age: number;
+isAdmin: boolean;
 };
 
 function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
-  return obj[key];
+return obj[key];
 }
 
 const user: User = {
-  name: "Alice",
-  age: 30,
-  isAdmin: true,
+name: "Alice",
+age: 30,
+isAdmin: true,
 };
 
 console.log(getProperty(user, "name")); // Output: "Alice"
@@ -39,40 +39,40 @@ Here, keyof User is "name" | "age" | "isAdmin", and getProperty ensures only val
 🧠 Explain the difference between any, unknown, and never types in TypeScript.
 
 1. any – Turn Off Type Safety
-When a variable is declared as any, TypeScript will not check its type at all. It effectively disables all type-checking for that variable.
+   When a variable is declared as any, TypeScript will not check its type at all. It effectively disables all type-checking for that variable.
 
 let value: any = "Hello";
 value = 42;
-value(); 
+value();
 Use with caution – only when migrating JS code or dealing with third-party data.
 
 2. unknown – Safe Alternative to any
-unknown is a safer version of any. You can assign anything to it, but you must do a type check before using it.
+   unknown is a safer version of any. You can assign anything to it, but you must do a type check before using it.
 
 let input: unknown = "World";
 
 if (typeof input === "string") {
-  console.log(input.toUpperCase());
+console.log(input.toUpperCase());
 }
 It forces you to narrow the type before use, making your code safer and more predictable.
 
 3. never – Represents the Impossible
-The never type indicates values that never occur. It’s often used for:
+   The never type indicates values that never occur. It’s often used for:
 
 Functions that never return (e.g., throw errors or infinite loops)
 
 Exhaustive checks in switch cases
 
 function throwError(message: string): never {
-  throw new Error(message);
+throw new Error(message);
 }
 
 function processInput(value: string | number): string {
-  if (typeof value === "string") return value;
-  if (typeof value === "number") return value.toString();
+if (typeof value === "string") return value;
+if (typeof value === "number") return value.toString();
 
-  const _exhaustiveCheck: never = value;
-  return _exhaustiveCheck;
+const \_exhaustiveCheck: never = value;
+return \_exhaustiveCheck;
 }
 
 🎯 Conclusion-
